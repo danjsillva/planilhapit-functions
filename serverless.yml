@@ -1,0 +1,15 @@
+service: planilhapit-functions
+
+app: planilhapit-functions
+org: danjsillva
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: sa-east-1
+
+functions:
+  quotation:
+    handler: handler.quotation
+    events: 
+      - http: GET quotation

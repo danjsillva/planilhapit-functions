@@ -1,18 +1,13 @@
 'use strict';
 
+const axios = require('axios');
+
 module.exports.quotation = async event => {
+  const label = event.queryStringParameters.label
+  const response = (await axios.get(`https://api.hgbrasil.com/finance/stock_price?key=1c0aeaa5&symbol=${label}`)).data;
+
   return {
     statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: 'Go Serverless v1.0! Your function executed successfully!',
-        input: event,
-      },
-      null,
-      2
-    ),
+    body: JSON.stringify({ ...response.results }, null, 2),
   };
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
 };

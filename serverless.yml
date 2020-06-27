@@ -12,4 +12,7 @@ functions:
   quotation:
     handler: handler.quotation
     events: 
-      - http: GET quotation
+      - http:
+          path: quotation
+          method: get
+          cors: true

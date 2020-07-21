@@ -1,8 +1,5 @@
 service: planilhapit-functions
 
-app: planilhapit-functions
-org: danjsillva
-
 provider:
   name: aws
   runtime: nodejs12.x

@@ -31,6 +31,11 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    # Runs a single command using the runners shell
+    - name: List app directory
+      with:
+        ref: master
+      run: ls -a
   # This workflow contains a deploy job
   deploy:
     # The type of runner that the job will run on
@@ -38,12 +43,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: List app directory
-    - uses: actions/checkout@v2
-      with:
-        ref: master
-      run: ls -a
     # Deploy the serverless app
     - name: Serverless deploy
       uses: serverless/github-action@master

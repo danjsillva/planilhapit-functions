@@ -38,6 +38,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    # Runs a single command using the runners shell
+    - name: IDK
+      run: ls -a
     # Deploy the serverless app
     - name: Serverless deploy
       uses: serverless/github-action@master

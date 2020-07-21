@@ -31,11 +31,7 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-    # Runs a single command using the runners shell
-    - name: List app directory
-      with:
-        ref: master
-      run: ls -a
+        ls -a
   # This workflow contains a deploy job
   deploy:
     # The type of runner that the job will run on
